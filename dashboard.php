@@ -22,6 +22,7 @@ if (!isset($_SERVER['HTTP_REFERER'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="sidebar">
@@ -29,29 +30,41 @@ if (!isset($_SERVER['HTTP_REFERER'])) {
             <h3>Campus Dashboard</h3>
         </div>
         <ul>
-            <li><a href="registerStudent.php">Register Student</a></li>
-            <li><a href="#">View Students</a></li>
-            <li><a href="#">Courses</a></li>
-            <!-- Add more menu items as needed -->
+            <li><a href="registerStudent.php"><i class="fas fa-user-plus"></i> Register Student</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> View Students</a></li>
+            <li><a href="#"><i class="fas fa-book"></i> Courses</a></li>
+            <li><a href="#"><i class="fas fa-calendar"></i> Schedule</a></li>
+            <li><a href="#"><i class="fas fa-chart-bar"></i> Reports</a></li>
         </ul>
     </div>
 
     <div class="main-content">
         <div class="header">
             <h1>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
-            <a href="logout.php" class="logout-btn">Logout</a>
+            <a href="logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
         
-        <div class="content">
-            <h2>Dashboard Overview</h2>
-            <!-- Add dashboard content here -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <i class="fas fa-user-graduate"></i>
+                <h3>Total Students</h3>
+                <p>150</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-book"></i>
+                <h3>Active Courses</h3>
+                <p>12</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>Lecturers</h3>
+                <p>25</p>
+            </div>
+            
+            </div>
         </div>
-    </div>
 
-    <script>
-        function showRegistrationForm() {
-            document.getElementById('registrationForm').style.display = 'block';
-        }
-    </script>
+        
+    
 </body>
 </html>
