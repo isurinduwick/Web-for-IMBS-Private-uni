@@ -21,10 +21,37 @@ if (!isset($_SERVER['HTTP_REFERER'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <!-- <h1>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1> -->
-  
-    <h1>this is the dashboard</h1>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3>Campus Dashboard</h3>
+        </div>
+        <ul>
+            <li><a href="registerStudent.php">Register Student</a></li>
+            <li><a href="#">View Students</a></li>
+            <li><a href="#">Courses</a></li>
+            <!-- Add more menu items as needed -->
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
+            <a href="logout.php" class="logout-btn">Logout</a>
+        </div>
+        
+        <div class="content">
+            <h2>Dashboard Overview</h2>
+            <!-- Add dashboard content here -->
+        </div>
+    </div>
+
+    <script>
+        function showRegistrationForm() {
+            document.getElementById('registrationForm').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
