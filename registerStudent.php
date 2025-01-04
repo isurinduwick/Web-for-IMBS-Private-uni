@@ -4,6 +4,10 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
     header("Location: index.php");
     exit();
 }
+
+function isCurrentPage($page) {
+    return strpos($_SERVER['PHP_SELF'], $page) !== false;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,11 +25,18 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
             <h3>Campus Dashboard</h3>
         </div>
         <ul>
-            <li><a href="registerStudent.php" class="active"><i class="fas fa-user-plus"></i> Register Student</a></li>
-            <li><a href="#"><i class="fas fa-users"></i> View Students</a></li>
-            <li><a href="#"><i class="fas fa-book"></i> Courses</a></li>
-            <li><a href="#"><i class="fas fa-calendar"></i> Schedule</a></li>
-            <li><a href="#"><i class="fas fa-chart-bar"></i> Reports</a></li>
+            <li><a href="dashboard.php" class="<?php echo isCurrentPage('dashboard.php') ? 'active' : ''; ?>">
+                <i class="fa-solid fa-gauge"></i>Dashboard</a></li>
+            <li><a href="registerStudent.php" class="<?php echo isCurrentPage('registerStudent.php') ? 'active' : ''; ?>">
+                <i class="fas fa-user-plus"></i> Register Student</a></li>
+            <li><a href="viewStudents.php" class="<?php echo isCurrentPage('viewStudents.php') ? 'active' : ''; ?>">
+                <i class="fas fa-users"></i> View Students</a></li>
+            <li><a href="courses.php" class="<?php echo isCurrentPage('courses.php') ? 'active' : ''; ?>">
+                <i class="fas fa-book"></i> Courses</a></li>
+            <li><a href="schedule.php" class="<?php echo isCurrentPage('schedule.php') ? 'active' : ''; ?>">
+                <i class="fas fa-calendar"></i> Schedule</a></li>
+            <li><a href="reports.php" class="<?php echo isCurrentPage('reports.php') ? 'active' : ''; ?>">
+                <i class="fas fa-chart-bar"></i> Reports</a></li>
         </ul>
     </div>
 
