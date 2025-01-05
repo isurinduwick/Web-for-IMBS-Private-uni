@@ -1,0 +1,61 @@
+.student-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.student-card h3 {
+    margin-top: 0;
+}
+.student-card p {
+    margin: 8px 0;
+}
+.student-card .actions {
+    display: flex;
+    justify-content: space-between;
+}
+.student-card button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.student-card .edit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+.student-card .delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+@media (max-width: 600px) {
+    .student-card {
+        padding: 12px;
+        margin: 12px;
+    }
+    .student-card button {
+        padding: 6px 12px;
+    }
+}
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.form-container input, .form-container button {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.form-container button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

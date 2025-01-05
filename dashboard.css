@@ -1,8 +1,8 @@
+/* Base styles */
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #f4f4f9;
     margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
 }
 
 .title{
@@ -10,16 +10,64 @@ body {
     color: #333;
 }
 
+/* Sidebar styles */
+.sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: white;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #4b545c;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li a {
+    color: #c2c7d0;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover, .sidebar ul li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+/* Main content styles */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    margin-bottom: 30px;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    border-radius: 5px;
-    margin-left: 0;
-    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .header h1 {
@@ -27,15 +75,14 @@ body {
     color: #333;
 }
 
+/* Logout button */
 .logout-btn {
-    padding: 10px 20px;
     background-color: #dc3545;
     color: white;
-    border: none;
+    padding: 8px 16px;
     border-radius: 4px;
-    cursor: pointer;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: 0.3s;
 }
 
 .logout-btn:hover {
@@ -82,95 +129,117 @@ body {
 }
 
 .form-container {
+    background-color: white;
     max-width: 600px;
     margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     color: #333;
-    font-weight: bold;
+    font-weight: 500;
 }
 
-.form-group input, .form-group select {
+.form-group input, .form-group select, .form-group textarea {
     width: 100%;
-    padding: 8px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
-.submit-btn {
-    background-color: #28a745;
+.form-container label {
+    color: #343a40;
+    font-weight: bold;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
 }
 
 .submit-btn:hover {
-    background-color: #218838;
+    background-color: #45a049;
 }
 
-.sidebar {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: #2c3e50;
-    padding-top: 20px;
-    color: white;
-}
-
-.sidebar-header {
+.student-card {
+    background-color: white;
+    border-radius: 8px;
     padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid #34495e;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.student-card h3 {
+    color: #343a40;
+    margin-top: 0;
 }
 
-.sidebar ul li {
-    padding: 15px 20px;
-    border-bottom: 1px solid #34495e;
+.student-card .actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
 }
 
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    display: block;
+.student-card button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-.sidebar ul li a.active {
-    background-color: #34495e;
-    color: #fff;
-    border-left: 4px solid #3498db;
+.edit-btn {
+    background-color: #4CAF50;
+    color: white;
 }
 
-.sidebar ul li:hover {
-    background-color: #34495e;
-}
-
-.main-content {
-    margin-left: 250px;
-    padding: 20px;
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
 }
 
 .stats-container {
@@ -300,4 +369,76 @@ body {
 
 .student-list tr:nth-child(even) {
     background-color: #f9f9f9;
+}
+
+/* Menu toggle button */
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        left: -250px;
+    }
+    
+    .sidebar.active {
+        left: 0;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+
+    .header {
+        margin-top: 50px;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .student-list {
+        overflow-x: auto;
+    }
+
+    .student-list table {
+        min-width: 600px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form-group input, 
+    .form-group select {
+        padding: 12px 8px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-card i {
+        font-size: 2em;
+    }
+
+    .stat-card p {
+        font-size: 1.5em;
+    }
 }

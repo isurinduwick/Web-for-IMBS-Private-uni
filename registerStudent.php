@@ -31,12 +31,9 @@ function isCurrentPage($page) {
                 <i class="fas fa-user-plus"></i> Register Student</a></li>
             <li><a href="viewStudents.php" class="<?php echo isCurrentPage('viewStudents.php') ? 'active' : ''; ?>">
                 <i class="fas fa-users"></i> View Students</a></li>
-            <li><a href="courses.php" class="<?php echo isCurrentPage('courses.php') ? 'active' : ''; ?>">
-                <i class="fas fa-book"></i> Courses</a></li>
-            <li><a href="schedule.php" class="<?php echo isCurrentPage('schedule.php') ? 'active' : ''; ?>">
-                <i class="fas fa-calendar"></i> Schedule</a></li>
-            <li><a href="reports.php" class="<?php echo isCurrentPage('reports.php') ? 'active' : ''; ?>">
-                <i class="fas fa-chart-bar"></i> Reports</a></li>
+            <li><a href="editStudents.php" class="<?php echo isCurrentPage('courses.php') ? 'active' : ''; ?>">
+                <i class="fas fa-book"></i> Edit Students</a></li>
+            </li>
         </ul>
     </div>
 
